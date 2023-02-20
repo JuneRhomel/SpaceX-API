@@ -4,14 +4,20 @@ import List from './List'
 
 
 export default function Main() {
-    const dataList = useContext(DataContext)
-    const [data, setData] = useState(dataList)
-    const myElementRef = useRef(null);
+    let dataList = useContext(DataContext)
+    const [alldata, setAllData] = useState(dataList)
+    console.log(alldata)
+
+    useEffect(() => {
+        setAllData(dataList);
+    }, [dataList]);
+
 
     const fillterSearch = (e) => {
+
         const search = e.target.value.toLowerCase()
-        const filtered =  dataList.filter(i => i.mission_name.toLowerCase().includes(search))
-        setData(filtered)
+        const filtered = dataList.filter(i => i.mission_name.toLowerCase().includes(search))
+        setAllData(filtered)
     }
     return (
         <div className='Main'>
@@ -19,12 +25,16 @@ export default function Main() {
                 <input type="text" placeholder='Search...' onChange={(e) => fillterSearch(e)} />
             </div>
             <div className='all-list' >
-                {data.map((item) => {
+                {alldata?
+                    alldata.map((item) => {
+                            return (
+                                <List {...item} key={item.mission_name} />
+                            )
+                        })
+                    :
+                    <h4>loading...</h4>
+                }
 
-                    return (
-                        <List {...item} key={item.mission_name} />
-                    )
-                })}
             </div>
 
         </div>
