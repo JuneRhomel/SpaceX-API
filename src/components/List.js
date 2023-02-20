@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import img from "../testAssets/01-preview.png"
 export default function (props) {
-    console.log(props)
+
 
     const [timeSinceLaunch, setTimeSinceLaunch] = useState("");
 

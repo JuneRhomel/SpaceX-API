@@ -6,8 +6,6 @@ import List from './List'
 export default function Main() {
     const  dataList = useContext(DataContext)
 
-
-
     return (
 
         <div className='Main'>

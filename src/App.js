@@ -5,7 +5,7 @@ import Main from './components/Main';
 import { DataContext } from './Contexts/DataContext';
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.spacexdata.com/v3/launches`)
