@@ -5,17 +5,17 @@ import List from './List'
 
 export default function Main() {
     const  dataList = useContext(DataContext)
-
+    
     return (
-
         <div className='Main'>
             <div className='Search'>
                 <input type="text" placeholder='Search...' />
             </div>
             <div className='all-list'>
                 {dataList.map((item) =>{
+                   
                     return(
-                        <List {...item} />
+                        <List {...item} key={item.mission_name} />
                     )
                 })}
             </div>

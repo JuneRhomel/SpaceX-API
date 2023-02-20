@@ -32,8 +32,11 @@ export default function (props) {
     }, [props.launchDateUtc]);
 
     const [display, setDisplay] = useState(false)
+    const [Show, setShow] = useState("Show")
     const handelDisplay = () => {
         setDisplay(!display)
+        Show=="Show"?setShow("Hide"): setShow("Show")
+        
     }
 
     return (
@@ -77,7 +80,7 @@ export default function (props) {
                 </>
                 : ""
             }
-            <button onClick={handelDisplay}>Hide</button>
+            <button onClick={handelDisplay}>{Show}</button>
         </div>
     )
 }
