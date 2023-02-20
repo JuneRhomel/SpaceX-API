@@ -56,7 +56,7 @@ export default function (props) {
             {display ?
                 <>
                     <div className='links'>
-                        {props.links.video_link == true ?
+                        {props.links.video_link == null ?
                             <small>in a year</small>
                             :
                             <>
