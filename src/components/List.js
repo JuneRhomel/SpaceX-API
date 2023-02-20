@@ -29,28 +29,27 @@ export default function (props) {
         }
 
         setTimeSinceLaunch(timeSinceLaunchString);
-    }, [props.launchDateUtc]);
+    }, [props.launch_date_utc]);
 
     const [display, setDisplay] = useState(false)
     const [Show, setShow] = useState("Show")
     const handelDisplay = () => {
         setDisplay(!display)
         Show=="Show"?setShow("Hide"): setShow("Show")
-        
     }
-
+    
     return (
         <div className='list-box'>
 
             <div className='head'>
                 <h2>{props.mission_name}</h2>
                 {
-                props.upcoming == null ? 
+                props.launch_success? 
                 <b className='success'>success</b>
                 : props.upcoming == true? 
-                <b className='failed'>failed</b> 
+                <b className='upcoming'>upcoming</b> 
                 : 
-                <b className='upcoming'>upcoming</b>
+                <b className='failed'>failed</b>
                 }
 
             </div>
