@@ -42,9 +42,9 @@ export default function (props) {
             <div className='head'>
                 <h2>{props.mission_name}</h2>
                 {
-                props.launch_success == true ? 
+                props.upcoming == null ? 
                 <b className='success'>success</b>
-                : props.launch_success == false? 
+                : props.upcoming == true? 
                 <b className='failed'>failed</b> 
                 : 
                 <b className='upcoming'>upcoming</b>

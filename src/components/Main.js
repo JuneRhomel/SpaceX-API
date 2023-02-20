@@ -1,19 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../Contexts/DataContext';
 import List from './List'
 
 
 export default function Main() {
-    const data = useContext(DataContext);
+    const  dataList = useContext(DataContext)
+
 
 
     return (
+
         <div className='Main'>
             <div className='Search'>
                 <input type="text" placeholder='Search...' />
             </div>
             <div className='all-list'>
-                {data.map((item) =>{
+                {dataList.map((item) =>{
                     return(
                         <List {...item} />
                     )
