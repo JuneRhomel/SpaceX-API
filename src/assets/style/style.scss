@@ -14,7 +14,6 @@
     border: 1px solid #929292;
     border-radius: 7px;
     max-height: 80vh;
-    overflow: auto;
 
     .Search {
         width: 100%;
@@ -106,4 +105,6 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    height: 45em;
+    overflow: auto;
 }

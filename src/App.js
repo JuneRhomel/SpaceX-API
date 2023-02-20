@@ -17,7 +17,9 @@ function App() {
         console.error(error);
       });
   }, []);  
-  console.log(data)
+
+
+
   return (
 
     <div className="App">
